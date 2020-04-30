@@ -1,14 +1,20 @@
 
 
 
-alert('Reto: Sistema de IF - ELSE');
+alert('Reto Ninja de Javascript No 001: Sistema de IF - ELSE');
 
 var edad = prompt("Para saber si estas en riesgo por el Coronavirus, ¿En que año escuchaste por primera vez Master Of Puppets de Metallica? Ejemplo: 1986");
 
-var consola = prompt("¿Cuál es tu Consola de Videojuegos favorita?");
+alert('Reto Ninja de Javascript No 002: SWITCH');
+
+var consola = prompt("¿Cuál es tu Consola de Videojuegos favorita? usa solo MAYÚSCULAS porfa");
+
+alert('Reto Ninja de Javascript No 003: PYRAMID HEAD');
+
+var k = prompt("Dame un numero entero del 1 al 10");
 
 
-document.write("<b>Reto If - Else </b><br />");
+document.write("<b>Reto 001: If - Else </b><br />");
 
 if (edad <= 1986){
     document.write("Ok Boomer!, por lo que mas quieras, QUEDATE EN TU CASA!");
@@ -25,7 +31,7 @@ else{
 document.write("<br /><br />");
 
 
-document.write("<b>Reto Estructura Switch</b><br />");
+document.write("<b>Reto 002: Estructura Switch</b><br />");
 
 switch(consola){
     case "XBOX":
@@ -40,10 +46,15 @@ switch(consola){
     case "PS2":
     case "PS3":
     case "PS4":
-        document.write("Sabias que puedes usar tu " + consola + "como parrilla además de consola?");
+        document.write("Sabias que puedes usar tu " + consola + " como parrilla además de consola?");
         break;
     
-    case "Nintendo":
+    case "PSP":
+    case "GAME BOY":
+        document.write("Oh si, los portables son la onda para esas aburridas reuniones familiares, que no?");
+        break;    
+
+    case "NINTENDO":
     case "NES":
     case "SNES":
     case "N64":
@@ -59,12 +70,47 @@ switch(consola){
 }
 document.write("<br /><br />");
 
-document.write("<b>Y de regalo una bonita piramide fraudulenta, de esas para vender perfumes</b><br />");
+document.write("");
 
-for(i = 0; i <= 10; i++){
+// for(i = 0; i <= 10; i++){
     
-    for (j = 0; j <= i; j++){
-        document.write("*"); 
+//     for (j = 0; j <= i; j++){
+//         document.write("*"); 
+//     }
+//     document.write("<br />");
+// }
+
+var friendlyMessage = "";
+if (Number.isInteger(parseInt(k))){
+    switch(true){
+        case (k <= 10):
+            friendlyMessage = "<b>Reto 003: y de regalo una bonita piramide fraudulenta, de esas en las que terminas vendiendo perfumes</b><br />";
+            break;
+        
+        case (k > 10 && k <= 100):
+            friendlyMessage = "<b>Reto 003: Ok, se puede extender un poco la liga, pero no mucho jeje</b><br />";
+            break;
+        
+        case (k > 100):
+            friendlyMessage = "<b>Reto 003: mas de 100 ya too much jeje, en 50 esta mas bonito no?</b><br />";
+            k = 50;
+            break;
     }
-    document.write("<br />");
+
+    document.write(friendlyMessage);
+    
+    for(i = 0; i <= k; i++){
+        for(j = 0; j <= k; j++){
+            if(j >= (k-i) && j <= (k+i)){
+                document.write("*");
+            }
+            else{
+                document.write("&nbsp;"); 
+            }
+        }
+        document.write("<br />");
+    }
+}
+else{
+    document.write(" Sorry, solo numeros para el Reto Ninja 003 <br />");
 }
